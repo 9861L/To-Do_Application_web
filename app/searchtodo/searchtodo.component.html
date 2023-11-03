@@ -1,0 +1,66 @@
+<div class="row">
+  <div id="searchdiv">
+    <i id="searchicon" class="bi bi-search"></i>
+    <a routerLink="/home/header">
+      <button mat-button style="margin-left: -50px;">
+        <mat-icon >home</mat-icon>
+       
+      </button></a>
+    <input matInput id="inputBar" type="text" placeholder="Search..." [(ngModel)]="searchedTitle"
+      (keyup)="searchinput()" />
+    <!-- <a type="submit" class="material-icons" matTooltip="Search" matTooltipPosition="above"
+   (click)="searchinput()"><mat-icon>search</mat-icon></a> -->
+
+    <a type="submit" class="material-icons" matTooltip="Reset" matTooltipPosition="above"
+      (click)="cleardata()"><mat-icon>refresh</mat-icon></a>
+    <button *ngIf="!showButton" class="addTaskBtn" matTooltipPosition="above" [matMenuTriggerFor]="menu" mat-raised-button color="primary"
+      aria-label="Example icon-button with a menu">
+      View By
+    </button>
+    <mat-menu #menu="matMenu">
+      
+
+      <button mat-menu-item (click)="complete()">
+        Completed
+      </button>
+
+      <button mat-menu-item (click)="important()">
+        Important
+      </button>
+
+      <button mat-menu-item (click)="archive()">
+        Archive
+      </button>
+      <div class="dropdown">
+        <button mat-menu-item>
+          Priority
+        </button>
+        <div class="dropdown-content">
+          <button mat-menu-item [disabled]="selected === 'high'" (click)="selected = 'high'; searchinput1()">
+            🔴High
+          </button>
+          <button mat-menu-item [disabled]="selected === 'medium'" (click)="selected = 'medium'; searchinput1()">
+            🟡Medium
+          </button>
+          <button mat-menu-item [disabled]="selected === 'low'" (click)="selected = 'low'; searchinput1()">
+            🟢Low
+          </button>
+        </div>
+      </div>
+
+
+    </mat-menu>
+  </div>
+
+  <div class="addTask">
+    <!-- <button mat class="addTaskBtn" (click)="addTodo()">Add Task</button> -->
+    <button   mat class="addTaskBtn" mat-raised-button color="primary" (click)="openDialog()">AddTask</button>
+    <!-- <div class="addTask"> -->
+      <div *ngIf="!showButton">
+        <button  style="margin-left: 25px;" class="addTaskBtn" mat-raised-button color="primary" (click)="deleteAllToDo()">Delete All</button>
+      </div>
+      
+    <!-- </div> -->
+  </div>
+  
+</div>

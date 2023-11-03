@@ -1,0 +1,16 @@
+.mainDiv{
+    border: 1px solid grey;
+    background: rgb(156, 152, 152);
+    margin: 30px;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+h1{
+    padding-top: 25px;
+    padding-left: 20px;
+    font-size: 40px;
+    background: -webkit-linear-gradient(#d40f0f, #b92a2a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

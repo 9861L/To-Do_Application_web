@@ -1,0 +1,261 @@
+<header>
+  <div class="addtask" style="border-radius: 10px;">
+    <app-searchtodo
+      class="ser"
+      (sendToContainer)="search($event)"
+      (sendToContainer1)="filter($event)"
+      (sendToContainer2)="completionStatus($event)"
+    ></app-searchtodo>
+    
+  </div>
+  <!-- <app-todo-by-date
+      (sendData)="toDoByDate($event)"
+      >
+  
+      </app-todo-by-date> -->
+  
+  <!-- <div *ngIf="showMessage">
+    <h1>You have No Tasks</h1>
+  </div>
+  <h6>{{ names }}</h6> -->
+  <!-- <div class="div">
+    <mat-card class="example-card" *ngFor="let card of allToDO"  >
+      <img
+      mat-card-image
+      [src]="card.imageUrl"
+      height="200px"
+      style="width: auto"
+    />
+      <div>
+        <mat-card-content> -->
+  <!-- <div *ngIf="card.imageUrl != ''">
+          
+          </div> -->
+  <!-- </mat-card-content>
+        <mat-card-header class="head">
+          <mat-card-title class="text">
+            <b
+              ><i>{{ card.title }}</i></b
+            ></mat-card-title
+          >
+          <mat-card-subtitle class="text text1">
+            <hr />    
+  
+            <mat-card-content class="desc">
+              {{ card.description }}
+            </mat-card-content>
+            <mat-card-subtitle><p class="details">Created On:- {{ card.createdDateTime }} |  Priority :-
+              {{ card.priority }}</p></mat-card-subtitle>
+          </mat-card-subtitle>
+       
+        </mat-card-header>
+        <div class="optionsbtn" >
+          <button
+            mat-button
+            matTooltip="Important"
+            class="menu-button"
+            (click)="updateToDoAsImportantTask(card)"
+            color="accent"
+          >
+            <mat-icon>add_task</mat-icon>
+          </button>
+          <button
+            mat-button
+            matTooltip="Edit"
+            class="menu-button"
+            color="primary"
+            routerLink="/home/addToDo/{{ card.title }}"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-button
+            matTooltip="Task Done"
+            class="menu-button"
+            color="warn"
+            (click)="updateTaskAsCompletedTask(card)"
+          >
+            <mat-icon>done_all</mat-icon>
+          </button>
+          <button
+            mat-button
+            matTooltip="Archive"
+            class="menu-button"
+            color="primary"
+            (click)="updateTaskArchiveStatus(card)"
+          >
+            <mat-icon>archive</mat-icon>
+          </button>
+          <button
+            mat-button
+            matTooltip="Delete"
+            class="menu-button"
+            color="warn"
+            (click)="deleteTaskById(card.title)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div></mat-card
+    >
+  </div> -->
+  
+  <!-- Hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii -->
+  <!-- <div class="bootstrap-wrapper">
+    <div class="container-fluid">
+      <h1 *ngIf="!showMessage">Available ToDo </h1>
+      <h1 *ngIf="!showMessage" >Please Add your ToDO</h1>
+      <div class="row mt20">
+        <div class="col-md-4" *ngFor="let card of allToDO"  (mouseover)="isVisible()">
+          <mat-card class="example-card"  >
+  
+            <mat-card-header class="head">
+              <mat-card-title class="text">
+                <b
+                  ><i> {{ card.title }}</i></b
+                ></mat-card-title
+              >
+              <mat-card-subtitle class="text text1">
+                <hr />
+  
+                <mat-card-content class="desc">
+                  {{ card.description }}
+                </mat-card-content>
+                <mat-card-subtitle
+                  ><p class="details">
+                    Created On:- {{ card.createdDateTime }} | Priority :-
+                    {{ card.priority }}
+                  </p></mat-card-subtitle
+                >
+              </mat-card-subtitle>
+            </mat-card-header>
+            <div class="optionsbtn" >
+              <button
+                mat-button
+                matTooltip="Important"
+                class="menu-button"
+                (click)="updateToDoAsImportantTask(card)"
+                color="accent"
+              >
+                <mat-icon>add_task</mat-icon>
+              </button>
+              <button
+                mat-button
+                matTooltip="Edit"
+                class="menu-button"
+                color="primary"
+                routerLink="/home/addToDo/{{ card.title }}"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-button
+                matTooltip="Task Done"
+                class="menu-button"
+                color="warn"
+                (click)="updateTaskAsCompletedTask(card)"
+              >
+                <mat-icon>done_all</mat-icon>
+              </button>
+              <button
+                mat-button
+                matTooltip="Archive"
+                class="menu-button"
+                color="primary"
+                (click)="updateTaskArchiveStatus(card)"
+              >
+                <mat-icon>archive</mat-icon>
+              </button>
+              <button
+                mat-button
+                matTooltip="Delete"
+                class="menu-button"
+                color="warn"
+                (click)="deleteTaskById(card.title)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>  -->
+  <div class="bootstrap-wrapper">
+    <div class="container-fluid">
+      <!-- <h1 class="mt2">Available Task</h1> -->
+      <h1 *ngIf="!showMessage">Available Task </h1>
+      <h1 *ngIf="showMessage" >Please Add Your Task</h1>
+      <div class="row mt2">
+        <div class="col-md-4" *ngFor="let card of allToDO | paginate: { itemsPerPage: 6, currentPage: p }">
+          <mat-card class="mt2" >
+            <mat-card-header>
+              <mat-card-subtitle class="subtitle">
+                {{ card.title }}
+              </mat-card-subtitle>
+              <mat-card-title class="title" *ngIf="!card.completed">
+                
+                Created On :- {{ card.createdDateTime }} | Priority :-
+                {{ card.priority }} <br>
+                Due Date :-{{card.dueDate}} | Status :- Pending
+              </mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <div>
+              <mat-card-content>
+                <p class="truncate">{{ card.description }}</p>
+              </mat-card-content>
+            </div>
+  
+            <mat-divider></mat-divider>
+  
+            <mat-card-actions class="button">
+              <button
+                mat-button
+                matTooltip="Important"
+                class="menu-button"
+                (click)="updateToDoAsImportantTask(card)"
+                color="accent"
+              >
+                <mat-icon>add_task</mat-icon>
+              </button>
+              <button
+                mat-button
+                matTooltip="Edit"
+                class="menu-button"
+                color="primary"
+                routerLink="/home/updateToDo/{{ card.title }}"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-button
+                matTooltip="Task Done"
+                class="menu-button"
+                color="warn"
+                (click)="updateTaskAsCompletedTask(card)"
+              >
+                <mat-icon>done_all</mat-icon>
+              </button>
+              
+              <button
+                mat-button
+                matTooltip="Delete"
+                class="menu-button"
+                color="warn"
+                (click)="deleteTaskById(card.title)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<footer >
+<div  class="clearfix">
+      <pagination-controls  (pageChange)="p = $event"></pagination-controls>
+      </div> 
+</footer>

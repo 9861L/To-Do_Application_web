@@ -1,0 +1,184 @@
+<!-- <div>
+  <mat-toolbar>
+    <img src="../../assets/images/notes.png" alt=""><span class="title">Task Zen</span>
+    <mat-button-toggle-group class="" name="fontStyle" aria-label="Font Style">
+      <a routerLink="/home/header">
+        <mat-button-toggle class="menu-button">HOME</mat-button-toggle>
+      </a>
+      <a routerLink="/home/viewimportant">
+        <mat-button-toggle class="menu-button">Important</mat-button-toggle>
+      </a>
+      <a routerLink="/home/viewcompleted">
+        <mat-button-toggle class="menu-button" >Completed</mat-button-toggle>
+      </a>
+      <a routerLink="/home/viewarchive">
+        <mat-button-toggle class="menu-button" >Archive</mat-button-toggle>
+      </a>
+    </mat-button-toggle-group>
+  </mat-toolbar>
+
+</div>
+<div >
+  <router-outlet></router-outlet>
+</div> -->
+<mat-toolbar>
+
+  <div>
+    <img src="../../assets/images/notes.png" alt="not found">
+  </div>
+  <a routerLink="/home/header"> <span class="title"  >Task Zen</span></a>
+  <span class="example-spacer"></span>
+
+  <!-- <a routerLink="/home/header">
+      <button mat-button class="menu-button">
+        <mat-icon>home</mat-icon>
+        <span> Home</span>
+      </button></a> -->
+
+  <!-- <a routerLink="/home/viewimportant">
+      <button mat-button class="menu-button">
+        <mat-icon>pending</mat-icon>
+        <span>Important</span>
+      </button>
+    </a>
+
+    <a routerLink="/home/viewcompleted">
+      <button mat-button class="menu-button">
+        <mat-icon>task</mat-icon>
+        <span>Completed</span>
+      </button>
+    </a>
+    <a routerLink="/home/viewarchive">
+      <button mat-button class="menu-button">
+        <mat-icon>archive</mat-icon>
+        <span>Archive</span>
+      </button>
+    </a> -->
+    <!-- <span class="example-spacer"></span> -->
+    <!-- <a routerLink="/home/todobydate">
+      <button mat-icon-button class="example-iconnotification" aria-label="Example icon-button with heart icon">
+        <mat-icon>notifications_active</mat-icon>
+      </button>
+    </a> -->
+    <!-- <button mat class="toDay" mat-raised-button 
+    (click)="toDayTask()">
+      TODAY TASK
+    </button> -->
+
+    <span  class="toDay"></span>
+    <a routerLink="/home/todobydate">
+      <button mat-icon-button class="example-iconnotification" 
+       matTooltip="Today Task" aria-label="Example icon-button with heart icon">
+        
+        <mat-icon >
+          today
+          </mat-icon>
+      </button>
+
+    </a>
+
+  <span class="example-spacer"></span>
+  <!-- <a style="margin-right: 10px;" >
+    <button mat-icon-button (click)="notification()" class="example-iconnotification" aria-label="Example icon-button with heart icon">
+      <mat-icon >notifications_active</mat-icon>
+      <div style="font-size: 10px; "  matBadge="{{totalLength}}" *ngIf="!(totalLength == 0)"
+       [matBadgeHidden]="badgevisible"></div>
+    </button>
+  </a> -->
+
+  <div class="dropdown">
+    <img  [src]="loginService.getUser().profileImg" style="height: 30px;width: 40px;border-radius: 20px ;">
+    <div class="dropdown-content">
+      <div class="name">{{loginService.getUser().firstName}}</div>
+      <div>{{loginService.getUser().emailId}}</div>
+      <button mat-raised-button class="menu-buttons" (click)="logOut()">
+        <mat-icon>logout</mat-icon>
+        <span class="log">Logout</span>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div class="outlet">
+  <router-outlet ></router-outlet>
+  <!-- <div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row mt2" *ngIf="showMessage" >
+      <div class="col-md-4" *ngFor="let card of toDoByDates">
+        <mat-card class="mt2" >
+          <mat-card-header>
+            <mat-card-subtitle class="subtitle">
+              {{ card.title }}
+            </mat-card-subtitle>
+            <mat-card-title class="title1">
+              Created On :- {{ card.createdDateTime }} | Priority :-
+              {{ card.priority }} | Due Date :-{{card.dueDate}}
+            </mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <div>
+            <mat-card-content>
+              <p class="truncate">{{ card.description }}</p>
+            </mat-card-content>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div> -->
+</div>
+<!-- <mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8">
+    <a routerLink="/home/header">
+      <button mat-button class="menu-button">
+        <mat-icon>home</mat-icon>
+        <span> Home</span>
+      </button></a>
+    <button mat-button class="menu-button" (click)="addTodo()">
+      <mat-icon>add</mat-icon>
+      <span> Add ToDo</span>
+    </button>
+
+
+    <a routerLink="/home/viewimportant">
+      <button mat-button class="menu-button">
+        <mat-icon>pending</mat-icon>
+        <span>Important</span>
+      </button>
+    </a>
+    <a routerLink="/home/viewcompleted">
+      <button mat-button class="menu-button">
+        <mat-icon>task</mat-icon>
+        <span>Completed</span>
+      </button>
+    </a>
+    <a routerLink="/home/viewarchive">
+      <button mat-button class="menu-button">
+        <mat-icon>archive</mat-icon>
+        <span>Archive</span>
+      </button>
+    </a>
+
+    <a routerLink="/home/notification">
+      <button mat-button class="menu-button">
+        <mat-icon>notifications_active</mat-icon>
+        <span>Notification</span>
+      </button></a>
+    <button mat-button class="menu-button" (click)="deleteAllToDo()">
+      <mat-icon>delete</mat-icon>
+      <span> delete all todo</span>
+    </button>
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" (click)="logOut()">
+      <mat-icon>logout</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content mat-elevation-z8" id="outlet">
+      <router-outlet></router-outlet>
+       Main content here! -->
+<!-- </div>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->

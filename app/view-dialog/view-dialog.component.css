@@ -1,0 +1,307 @@
+.example-card {
+    max-width: 385px;
+    margin: 10px;
+    /* padding: 2px; */
+    /* min-height: 100px; */
+    font-family: "Roboto Slab", serif;
+    /* background-image: url(../../../assets/bg4.png); */
+    background-color: transparent;
+    /* background-color: beige; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border: 2px solid blue;
+  }
+  .div {
+    /* margin: 0px 20px 20px 0px; */
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Roboto Slab", serif;
+    justify-content: space-around;
+  }
+  .material-icons {
+    cursor: pointer;
+    /* padding-left: 15px; */
+  }
+  
+  .high-priority .head {
+    /* border: 5px solid red; */
+    /* background-image: url(../../../assets/pinkk.jpg); */
+    background-size: cover;
+  }
+  
+  .medium-priority .head {
+    /* border: 5px solid yellow; */
+    /* background-image: url(../../../assets/yellow.jpg); */
+    background-size: cover;
+  }
+  
+  .low-priority .head {
+    /* border: 5px solid rgb(76, 184, 108) ; */
+    /* background-image: url(../../../assets/green.jpg); */
+    background-size: cover;
+  }
+  .is-true {
+    border: 50px solid yellow;
+    font-size: 100px;
+  }
+  .is-false {
+    border: 50px solid black;
+    font-size: 100px;
+  }
+  textarea {
+    padding: 0 20px;
+  }
+  .desc {
+    margin-right: 5px;
+    font-size: 20px;
+    min-width: 320px;
+    /* word-wrap: break-word; */
+    margin-bottom: 20px;
+    font-family: "Oswald", sans-serif;
+    text-align: justify;
+    text-transform: lowercase;
+  }
+  .text {
+    /* font-family: "Roboto Slab", serif; */
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Rajdhani", sans-serif;
+  }
+  .text1 {
+    /* font-weight: bold; */
+    /* text-transform: uppercase; */
+  }
+  .text2 {
+    padding-left: 10px;
+    padding-top: 10px;
+    /* text-transform: uppercase; */
+  }
+  hr {
+    margin-top: 5px;
+  }
+  .but {
+    margin-left: 40%;
+  }
+  .demo-data * {
+    margin: 16px 0;
+  }
+  
+  .demo-paginator {
+    width: 400px;
+  }
+  #pg {
+    display: inline;
+    display: flex;
+    margin-left: 25%;
+  }
+  .size1 {
+    font-size: large;
+    color: black;
+    font-weight: 300px;
+  }
+  h6 {
+    color: black;
+  }
+  .mainDiv {
+    display: flex;
+    background-color: #0cbaba;
+    border: 1px solid snow;
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  }
+  
+  #applogo {
+    width: 80px;
+    height: 80px;
+  }
+  #profile {
+    width: 60px;
+    height: 60px;
+    margin-left: 950px;
+    margin-top: 10px;
+  }
+  
+  .innerdiv {
+    display: flex;
+  }
+  h2 {
+    padding-top: 25px;
+    padding-left: 20px;
+    font-size: 40px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .addtask {
+    margin-top: 5px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 0.5fr 5fr 0.7fr;
+    width: 90%;
+    margin-left: 3%;
+    background-color: aqua;
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  }
+  
+  .head1 {
+    display: flex;
+    width: 100%;
+  }
+  
+  h1 {
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+  }
+  button {
+    margin-top: 15px;
+  }
+  .add {
+    margin-left: 200px;
+  }
+  .del {
+    margin-top: 15px;
+    margin-right: 200px;
+  }
+  .details {
+    font-size: small;
+    font-weight: bold;
+  }
+  .optionsbtn {
+    display: flex;
+    margin-left: 28px;
+  }
+  h6 {
+    /* padding-top: 25px; */
+    padding-left: 20px;
+    font-size: 40px;
+    margin-left: 20px;
+    /* background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+    /* text-align: center; */
+  }
+  mat-icon {
+    /* height: 50px;
+    width: 50px; */
+    /* font-size: larger; */
+    transform: scale(1.5);
+  }
+  
+  /* Hiii */
+  
+  .example-header-image {
+    background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+    background-size: cover;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .example-card {
+    max-width: 400px;
+  }
+  
+  /* .page {
+    font-size: large;
+   
+  } */
+  /* :host /deep/ .ngx-pagination {
+    padding-left: 0px;
+  }
+  
+  :host /deep/.ngx-pagination .current,
+  .btn-info {
+    background: #17a2b8 !important;
+    border: transparent;
+    border-radius: 20px;
+  }
+  
+  :host /deep/.ngx-pagination .current:hover {
+    background: #17a2b8 !important;
+    border-radius: 18px;
+    border: transparent;
+  } */
+  
+  .clearfix {
+    position:relative;
+    right: 35%;
+    left: 35%;
+    font-size: 25px;
+  }
+  
+  /* //new........... */
+  /* .truncate{
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: large;
+  } */
+  .truncate{
+    height: 100px;
+    width: auto;
+    overflow: auto;
+    padding: 5px; 
+  }
+  p{
+      font-family:'Verdana, Geneva, Tahoma, sans-serif';
+      /* font-weight: 100; */
+      /* letter-spacing: -0.25px;
+      line-height: 1.25;
+      word-break: break-all;
+      word-wrap: pre-wrap; */
+      font-size: 21px;
+      color: gray;
+      font-weight: bold;
+  }
+  
+  .mt2{
+    margin-bottom: 20px;
+  }
+  .subtitle{
+    /* color: black;
+    text-align: center;
+    text-transform: uppercase; */
+    font-family: "Rajdhani", sans-serif;
+    font-weight: bold;
+  }
+  .title{
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 2px;
+  }
+  .subtitle{
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    /* text-align: center; */
+    /* font-family: "Rajdhani", sans-serif; */
+   
+  }
+  mat-card {
+    box-shadow: 0px 0px 10px 0px #9b9b9b,
+        0 1px 1px 0 #9b9b9b,
+        0 1px 3px 0 #9b9b9b;
+  }
+  
+  .button{
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+  }
+  
+  
+  /* .example-card {
+    max-width: 150px;
+    margin-bottom: 8px;
+  } */
+  
+  

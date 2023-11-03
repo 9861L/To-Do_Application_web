@@ -1,0 +1,90 @@
+<div class="fullForm" style="padding: 30px;">
+  <form [formGroup]="taskForm" class="formColor">
+    <mat-panel-title class="example-headers-align"> Add Your Task </mat-panel-title>
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input type="text" formControlName="title" name="title" matInput />
+      <mat-error *ngIf="title.errors?.['required']">
+        <strong>Title is required</strong>
+      </mat-error>
+      <mat-error *ngIf="title.errors?.['minlength']">
+        <strong>required length is 4</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea formControlName="description" name="description" matInput></textarea>
+      <mat-error *ngIf="description.errors?.['required']">
+        <strong> Description is required</strong>
+      </mat-error>
+      <mat-error *ngIf="description.errors?.['minlength']">
+        <strong>Length should be 10 Char</strong>
+      </mat-error>
+    </mat-form-field>
+    <div style="display: flex;">
+      <mat-form-field appearance="fill" >
+        <mat-label>Priority</mat-label>
+        <mat-select formControlName="priority" name="priority">
+          <mat-option value="low">Low </mat-option>
+          <mat-option value="medium">Medium </mat-option>
+          <mat-option value="high">High </mat-option>
+        </mat-select>
+        <mat-error *ngIf="priority.errors?.['required']">
+          <strong> Set Priority</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Task Completion Date</mat-label>
+        <input matInput class="date" formControlName="dueDate" min="{{ todayDates }}" style="font-size: large;"
+          [matDatepicker]="picker">
+        
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-error *ngIf="
+              dueDate?.invalid && (dueDate.dirty || dueDate.touched)
+            ">
+          <strong *ngIf="dueDate?.errors?.['required']" style="font-size: medium;">This Date is
+            Required
+          </strong>
+
+        </mat-error>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+
+      <!-- <div class="date" appearance="fill">
+        <input  type="date" class="date" placeholder="Enter Date From Today" formControlName="dueDate" required
+          min="{{ todayDates }}" style="font-size: large;" />
+        
+        <mat-error *ngIf="
+              dueDate?.invalid && (dueDate.dirty || dueDate.touched)
+            ">
+          <strong *ngIf="dueDate?.errors?.['required']" style="font-size: medium;margin-left: 70px;">This Date is
+            Required
+          </strong>
+
+        </mat-error>
+      </div> -->
+
+    </div>
+
+
+    <!-- <div> -->
+    <button class="button" mat-raised-button type="submit" *ngIf="isBoolean1" [disabled]="taskForm.invalid"
+      (click)="onSubmit()">
+      Add ToDo
+    </button>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="taskForm.invalid" (click)="updateToDo()"
+      *ngIf="isBoolean2">update ToDo</button>
+    <!-- </div> -->
+    <!-- <a routerLink='/home/header'> -->
+      <!-- <mat-icon style="padding-top: 5px;">keyboard_backspace</mat-icon> -->
+      <!-- <button mat-raised-button class="button"> -->
+      <!-- Back To Home ! -->
+      <!-- </button> -->
+    <!-- </a> -->
+  </form>
+
+
+</div>
